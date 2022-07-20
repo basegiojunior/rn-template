@@ -1,8 +1,8 @@
 {
-  "name": "react-native-new-template",
+  "name": "rn-template",
   "version": "0.1",
   "description": "React Native Template",
-  "repository": "git@github.com:Esemesek/react-native-new-template.git",
+  "repository": "git@github.com:basegiojunior/rn-template.git",
   "author": "Ademir Baségio Junior <basegiojunior@gmail.com>",
   "license": "MIT"
 }
