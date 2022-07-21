@@ -1,8 +1,12 @@
 {
-  "name": "rntemplate",
-  "version": "0.1",
+  "name": "react-native-template-example",
+  "version": "0.0.1",
   "description": "React Native Template",
   "repository": "git@github.com:basegiojunior/rn-template.git",
   "author": "Ademir Baségio Junior <basegiojunior@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "template",
+    "template.config.js"
+  ]
 }
