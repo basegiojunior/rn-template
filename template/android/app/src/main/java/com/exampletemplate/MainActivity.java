@@ -1,4 +1,4 @@
-package com.boilerplatereactnative;
+package com.exampletemplate;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -12,7 +12,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "BoilerplateReactNative";
+    return "ExampleTemplate";
   }
 
   /**
