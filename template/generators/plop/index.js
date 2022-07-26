@@ -5,26 +5,6 @@ module.exports = plop => {
     message,
   });
 
-  const promptInputGetAtomicType = {
-    type: 'list',
-    name: 'atomicType',
-    choices: ['Atoms', 'Molecules', 'Organisms', 'Templates'],
-    message: 'What is the component type?',
-  };
-
-  const actionModifyFromTemplate = (
-    destinationPath,
-    pattern,
-    template,
-    abortOnFail = true,
-  ) => ({
-    type: 'modify',
-    path: destinationPath,
-    pattern,
-    template,
-    abortOnFail,
-  });
-
   const actionAddFromTemplate = (sourcePath, destinationPath) => ({
     type: 'add',
     path: destinationPath,
@@ -34,7 +14,7 @@ module.exports = plop => {
 
   // Destination Paths
   const srcDestinationPath = '../../src';
-  const componentDestinationPath = `${srcDestinationPath}/components/{{pascalCase atomicType}}/{{pascalCase name}}`;
+  const componentDestinationPath = `${srcDestinationPath}/components/{{pascalCase name}}`;
   const pageDestinationPath = `${srcDestinationPath}/page/{{pascalCase name}}`;
 
   // Source Paths
@@ -48,22 +28,8 @@ module.exports = plop => {
       object: {
         description:
           'This is a Skeleton Component with styles, types and tests',
-        prompts: [
-          promptInputGetName('Component name?'),
-          promptInputGetAtomicType,
-        ],
+        prompts: [promptInputGetName('Component name?')],
         actions: [
-          actionModifyFromTemplate(
-            `${srcDestinationPath}/components/{{pascalCase atomicType}}/index.ts`,
-            /(\/\/ EXPORTS)/g,
-            "export { default as {{pascalCase name}} } from './{{pascalCase name}}';\n$1",
-          ),
-          actionModifyFromTemplate(
-            `${srcDestinationPath}/components/index.ts`,
-            /(\/\/ {{pascalCase atomicType}} )/g,
-            '',
-            false,
-          ),
           actionAddFromTemplate(
             `${componentSourcePath}/index.tsx.hbs`,
             `${componentDestinationPath}/index.tsx`,
