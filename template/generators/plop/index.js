@@ -15,7 +15,7 @@ module.exports = plop => {
   // Destination Paths
   const srcDestinationPath = '../../src';
   const componentDestinationPath = `${srcDestinationPath}/components/{{pascalCase name}}`;
-  const pageDestinationPath = `${srcDestinationPath}/page/{{pascalCase name}}`;
+  const pageDestinationPath = `${srcDestinationPath}/pages/{{pascalCase name}}`;
 
   // Source Paths
   const templateFolder = './templates';
