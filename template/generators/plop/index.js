@@ -16,11 +16,13 @@ module.exports = plop => {
   const srcDestinationPath = '../../src';
   const componentDestinationPath = `${srcDestinationPath}/components/{{pascalCase name}}`;
   const pageDestinationPath = `${srcDestinationPath}/pages/{{pascalCase name}}`;
+  const storeDestinationPath = `${srcDestinationPath}/stores`;
 
   // Source Paths
   const templateFolder = './templates';
   const componentSourcePath = `${templateFolder}/component`;
   const pageSourcePath = `${templateFolder}/page`;
+  const storeSourcePath = `${templateFolder}/store`;
 
   const generators = [
     {
@@ -70,6 +72,19 @@ module.exports = plop => {
           actionAddFromTemplate(
             `${pageSourcePath}/style.ts.hbs`,
             `${pageDestinationPath}/{{pascalCase name}}.style.ts`,
+          ),
+        ],
+      },
+    },
+    {
+      name: 'Store',
+      object: {
+        description: 'This is a Skeleton store with zustand',
+        prompts: [promptInputGetName('Store name?')],
+        actions: [
+          actionAddFromTemplate(
+            `${storeSourcePath}/store.ts.hbs`,
+            `${storeDestinationPath}/{{camelCase name}}Store.ts`,
           ),
         ],
       },
