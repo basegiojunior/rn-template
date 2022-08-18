@@ -1,6 +1,6 @@
 # React Native Template
 
-React Native project template with automatic code generation of components and stores.
+React Native project template with automatic code generation of components and stores (tested on Android only).
 
 ## Fetaures
 
